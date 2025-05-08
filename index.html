@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Management System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar">
+    <div class="nav-brand">🏋️‍♂️ GymPro</div>
+    <ul class="nav-links">
+        <li><a href="#diet-section">Diet Plan</a></li>
+        <li><a href="#performance-section">Performance</a></li>
+        <li><a href="#schedule-section">Schedule</a></li>
+    </ul>
+</nav>
+
+<div class="container" id="diet-section">
+  <h1>🏋️‍♂️ Gym Diet Recommender</h1>
+  <form id="dietForm">
+    <div class="form-row">
+      <div class="input-group">
+        <label for="age">Age</label>
+        <input type="number" id="age" required>
+      </div>
+      <div class="input-group">
+        <label for="gender">Gender</label>
+        <select id="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="input-group">
+        <label for="weight">Weight (kg)</label>
+        <input type="number" id="weight" required>
+      </div>
+      <div class="input-group">
+        <label for="height">Height (cm)</label>
+        <input type="number" id="height" required>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label for="goal">Fitness Goal</label>
+      <select id="goal">
+        <option value="gain">Muscle Gain</option>
+        <option value="loss">Weight Loss</option>
+        <option value="maintain">Maintain Fitness</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <label for="diet">Diet Type</label>
+      <select id="diet">
+        <option value="veg">Vegetarian</option>
+        <option value="nonveg">Non-Vegetarian</option>
+        <option value="vegan">Vegan</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <label for="activity">Activity Level</label>
+      <select id="activity">
+        <option value="low">Low (Sedentary)</option>
+        <option value="moderate">Moderate (3-5 days/week)</option>
+        <option value="high">High (Daily training)</option>
+      </select>
+    </div>
+
+    <button type="submit">Generate My Diet Plan</button>
+  </form>
+
+  <div id="result" class="result-box"></div>
+</div>
+
+<hr>
+
+<!-- Performance Tracker Section -->
+<div class="section" id="performance-section">
+  <h2>📊 Daily Performance Tracker</h2>
+  <p>Track your daily activity to evaluate how well you're performing. Adjust effort for optimal growth!</p>
+  <form id="trackerForm">
+    <div class="form-row">
+      <div class="input-group">
+        <label for="minutes">Workout Duration (minutes)</label>
+        <input type="number" id="minutes" required>
+      </div>
+      <div class="input-group">
+        <label for="intensity">Intensity</label>
+        <select id="intensity">
+          <option value="low">Low (Yoga, Walking)</option>
+          <option value="moderate">Moderate (Jogging, Gym)</option>
+          <option value="high">High (HIIT, Heavy Lifting)</option>
+        </select>
+      </div>
+    </div>
+    <button type="submit">Track Performance</button>
+  </form>
+  <div id="performanceResult" class="result-box"></div>
+</div>
+
+<hr>
+
+<!-- Gym Schedule by Age Group -->
+<div class="section" id="schedule-section">
+  <h2>📅 Weekly Gym Schedule by Age</h2>
+  <p>Select your age group to see a tailored training plan based on typical needs and recovery capacity.</p>
+  <div class="input-group">
+    <label for="ageGroup">Age Group</label>
+    <select id="ageGroup" onchange="updateSchedule()">
+      <option value="under20">Under 20</option>
+      <option value="20s">20-29</option>
+      <option value="30s">30-39</option>
+      <option value="40plus">40 and above</option>
+    </select>
+  </div>
+  <div class="schedule" id="scheduleOutput"></div>
+</div>
+
+<script src="gym.js"></script>
+</body>
+</html>
+
+
